@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owsho Seller Subscription Plans</title>
+
+<style>
+  /* ===== Base Styling ===== */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #032f52, #0471bd, #30728b);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #fff;
+  }
+
+  h1 {
+    text-align: center;
+    color: #fba208;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  }
+
+  /* ===== Package Container ===== */
+  .package-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* ===== Each Card ===== */
+  .package {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+  .package:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    border-color: #fba208;
+  }
+
+  .package h2 {
+    color: #fba208;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  /* Price box */
+  .price-box {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
+  }
+
+  /* Plan selector */
+  .plan-select {
+    display: none;
+    margin: 10px 0 15px;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .plan-select select {
+    background: #fff;
+    color: #0471bd;
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: none;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+  }
+
+  /* Features table */
+  .features {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px 20px;
+    text-align: left;
+    animation: fadeInUp 0.6s ease;
+    margin-top: 15px;
+  }
+
+  .features h4 {
+    color: #fba208;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  th {
+    font-weight: 500;
+  }
+  td {
+    text-align: right;
+    font-weight: 600;
+  }
+  .yes {
+    color: #00ffae;
+  }
+  .no {
+    color: #ff5c5c;
+  }
+
+  /* Buy button */
+  .buy-btn {
+    display: block;
+    margin: 20px auto 0;
+    background: #fba208;
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .buy-btn:hover {
+    background: #ffbb3c;
+    transform: scale(1.05);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  /* Responsive */
+  @media(max-width:768px){
+    h1{font-size:2rem;}
+    .package{padding:25px 15px;}
+  }
+</style>
+</head>
+<body>
+
+<h1>Owsho Seller Subscription Packages 2025</h1>
+
+<div class="package-container">
+  <div class="package" data-package="silver">
+    <h2>Silver</h2>
+    <div class="price-box">
+      6 Month – ₹1,499<br>1 Year – ₹2,998
+    </div>
+    <div class="plan-select">
+      <select>
+        <option value="">Select Plan</option>
+        <option value="6m">6 Month</option>
+        <option value="1y">1 Year</option>
+      </select>
+    </div>
+    <div class="features"></div>
+  </div>
+
+  <div class="package" data-package="gold">
+    <h2>Gold</h2>
+    <div class="price-box">
+      6 Month – ₹5,999<br>1 Year – ₹11,998
+    </div>
+    <div class="plan-select">
+      <select>
+        <option value="">Select Plan</option>
+        <option value="6m">6 Month</option>
+        <option value="1y">1 Year</option>
+      </select>
+    </div>
+    <div class="features"></div>
+  </div>
+
+  <div class="package" data-package="diamond">
+    <h2>Diamond</h2>
+    <div class="price-box">
+      6 Month – ₹13,499<br>1 Year – ₹26,998
+    </div>
+    <div class="plan-select">
+      <select>
+        <option value="">Select Plan</option>
+        <option value="6m">6 Month</option>
+        <option value="1y">1 Year</option>
+      </select>
+    </div>
+    <div class="features"></div>
+  </div>
+
+  <div class="package" data-package="platinum">
+    <h2>Platinum</h2>
+    <div class="price-box">
+      6 Month – ₹22,999<br>1 Year – ₹45,998
+    </div>
+    <div class="plan-select">
+      <select>
+        <option value="">Select Plan</option>
+        <option value="6m">6 Month</option>
+        <option value="1y">1 Year</option>
+      </select>
+    </div>
+    <div class="features"></div>
+  </div>
+</div>
+
+<script>
+const featureNames = [
+  "Product Add Support",
+  "Limit of Product Add",
+  "Coupon Code",
+  "Home Page Banner Review",
+  "Top Seller/Best Seller Badges",
+  "Dedicated 24*7 Support",
+  "Chat Support",
+  "Custom Branding Option",
+  "Product Listing Instant Support",
+  "Logo Design",
+  "QR Code Generate",
+  "Ticket Generate for Support",
+  "Analytical Report Share by Admin",
+  "Chat-Bot Options",
+  "WhatsApp Notification",
+  "Social Media Icon",
+  "Analytical Report Frequency",
+  "Support Type"
+];
+
+const data = {
+  silver: ["15 Products Add","200 Product Limit","3 Coupons/Month","Single","❌","❌","❌","❌","❌","❌","✅","✅","❌","✅","❌","WP","❌","Normal Support"],
+  gold: ["35 Products Add","500 Product Limit","10 Coupons/Month","Single","❌","❌","❌","❌","❌","❌","✅","✅","❌","✅","❌","WP, FB","❌","Normal Support"],
+  diamond: ["60 Products Add","1500 Product Limit","30 Coupons/Month","Single","✅","✅","✅","✅","✅","✅","✅","✅","✅ (Quarterly)","✅","✅","WP, FB, Insta","Quarterly","Priority Support"],
+  platinum: ["99 Products Add","Unlimited","Unlimited Coupons","Multiple","✅","✅","✅","✅","✅","✅","✅","✅","✅ (Monthly)","✅ (Product Wise)","✅","WP, FB, Insta","Monthly","Premium 24*7 Support"]
+};
+
+document.querySelectorAll(".package").forEach(pkg => {
+  pkg.addEventListener("mouseenter", () => {
+    pkg.querySelector(".plan-select").style.display = "block";
+  });
+
+  pkg.addEventListener("mouseleave", () => {
+    const select = pkg.querySelector("select");
+    if (!select.value) {
+      pkg.querySelector(".plan-select").style.display = "none";
+      pkg.querySelector(".features").style.display = "none";
+    }
+  });
+
+  pkg.querySelector("select").addEventListener("change", e => {
+    const type = pkg.dataset.package;
+    const featuresBox = pkg.querySelector(".features");
+    const selected = e.target.value;
+    if (selected) {
+      let html = `<h4>Package Features</h4><table>`;
+      featureNames.forEach((f, i) => {
+        const val = data[type][i];
+        const isYes = !val.includes("❌");
+        html += `<tr><th>${f}</th><td class="${isYes ? 'yes' : 'no'}">${val}</td></tr>`;
+      });
+      html += `</table><button class='buy-btn'>Buy Now</button>`;
+      featuresBox.innerHTML = html;
+      featuresBox.style.display = "block";
+    } else {
+      featuresBox.style.display = "none";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
